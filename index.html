@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<!-- morcept-design: layout=editorial; motion=wipe -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>威舜 VME Group｜人資策略夥伴</title>
+<meta name="description" content="VME Group 威舜：獵才招募、專業派遣、勞資顧問、薪資委外、大量解僱協助、亞洲 PEO/EOR 服務。">
+<link rel="icon" href="https://valuestme.com/wp-content/uploads/2021/03/威舜Favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { bronze: '#b07a4f', bronzeD: '#7d5232', paper: '#f4f2ee', stone: '#e5e0d7', gold: '#c9a227', ink: '#221e1b', inkS: '#4a423b' },
+  fontFamily: { sans: ['"Noto Sans TC"', 'sans-serif'], head: ['"Schibsted Grotesk"', '"Noto Sans TC"', 'sans-serif'] },
+  maxWidth: { wrap: '1310px' }
+} } };
+</script>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: #f4f2ee; color: #221e1b; caret-color: #b07a4f; }
+  ::selection { background: #c9a227; color: #221e1b; }
+  :focus-visible { outline: 2px solid #b07a4f; outline-offset: 3px; border-radius: 4px; }
+  a { text-underline-offset: 0.3em; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .h-xl { font-size: clamp(2.6rem, 6.4vw, 6rem); line-height: 1.04; letter-spacing: -0.03em; }
+  .h-lg { font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; }
+  .measure { max-width: 34em; }
+  [data-page] { display: none; }
+  [data-page].on { display: block; }
+  .press { transition: transform .18s cubic-bezier(.23,1,.32,1), background-color .2s, color .2s, box-shadow .2s, border-color .2s; }
+  .press:active { transform: scale(0.97); }
+  .btn-flow { background: linear-gradient(110deg, #c9a227, #d9b64a, #b07a4f, #c9a227); background-size: 300% 100%; animation: flow 8s ease-in-out infinite; color: #221e1b; }
+  @keyframes flow { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+  .bob { animation: bob 1.8s cubic-bezier(.23,1,.32,1) infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(9px); } }
+  .floaty { animation: floaty 7s ease-in-out infinite; }
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-18px) rotate(6deg); } }
+  .caret::after { content: ''; display: inline-block; width: 2px; height: 1em; background: #b07a4f; margin-left: 3px; vertical-align: -0.12em; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  #hdr.small { box-shadow: 0 10px 30px -18px rgba(34,30,27,.35); }
+  #hdr.small .hdr-in { height: 64px; }
+  #hdr.small .logo-img { height: 34px; }
+  .hdr-in, .logo-img { transition: height .25s cubic-bezier(.23,1,.32,1); }
+  .navlink { position: relative; }
+  .navlink.active { color: #7d5232; }
+  .navlink.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #c9a227; }
+  /* dropdown / mega menu */
+  .dd-panel { opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .2s cubic-bezier(.23,1,.32,1), transform .2s cubic-bezier(.23,1,.32,1), visibility .2s; z-index: 45; }
+  .dd.open > .dd-panel, .dd:focus-within > .dd-panel { opacity: 1; visibility: visible; transform: none; }
+  .dd.shut > .dd-panel { opacity: 0 !important; visibility: hidden !important; transform: translateY(8px) !important; }
+  .dd-chev { transition: transform .2s cubic-bezier(.23,1,.32,1); }
+  .dd.open .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+  .dd-item { transition: background-color .18s, color .18s; }
+  .dd-item.active { background: #f4f2ee; }
+  .dd-item.active b { color: #7d5232; }
+  .dd-arr { transition: transform .2s cubic-bezier(.23,1,.32,1), color .2s; color: #b9aea2; }
+  .dd-ico { transition: background-color .2s, color .2s; }
+  .mlink.active { color: #7d5232; font-weight: 700; }
+  .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s cubic-bezier(.23,1,.32,1); }
+  .acc.open .acc-body { grid-template-rows: 1fr; }
+  .acc.open .acc-ico { transform: rotate(45deg); }
+  .acc-ico { transition: transform .2s cubic-bezier(.23,1,.32,1); }
+  .chip.on { background: #221e1b; color: #f4f2ee; border-color: #221e1b; }
+  .step-btn.on .step-dot { background: #b07a4f; color: #fff; border-color: #b07a4f; }
+  .modal { transition: opacity .2s; }
+  .modal.hidden-m { opacity: 0; pointer-events: none; }
+  .modal .panel { transition: transform .25s cubic-bezier(.23,1,.32,1); }
+  .modal.hidden-m .panel { transform: translateY(16px) scale(.97); }
+  input, textarea, select { background: #fff; }
+  .field { width: 100%; border: 1px solid #cfc7ba; border-radius: 6px; padding: .75rem .9rem; transition: border-color .2s; }
+  .field:focus { outline: none; border-color: #b07a4f; box-shadow: 0 0 0 3px rgba(176,122,79,.18); }
+  @media (hover:hover) and (pointer:fine) {
+    .navlink:hover { color: #7d5232; }
+    .dd:hover > .dd-panel { opacity: 1; visibility: visible; transform: none; }
+    .dd:hover .dd-chev { transform: rotate(180deg); }
+    .dd-item:hover { background: #f4f2ee; }
+    .dd-item:hover b { color: #7d5232; }
+    .dd-item:hover .dd-arr { transform: translateX(4px); color: #7d5232; }
+    .dd-item:hover .dd-ico { background: #221e1b; color: #f4f2ee; }
+    .btn-ink:hover { background: #7d5232; }
+    .btn-line:hover { background: #221e1b; color: #f4f2ee; }
+    .row-link:hover .row-arrow { transform: translateX(6px); }
+    .row-link:hover h3 { color: #7d5232; }
+    .chip:hover { border-color: #221e1b; }
+    .card-h:hover { transform: translateY(-4px); box-shadow: 0 18px 34px -18px rgba(34,30,27,.4); }
+    .float-btn:hover { background: #b07a4f; color: #fff; }
+    .ulink:hover { text-decoration: underline; }
+  }
+  .row-arrow { transition: transform .2s cubic-bezier(.23,1,.32,1); }
+  .card-h { transition: transform .25s cubic-bezier(.23,1,.32,1), box-shadow .25s; }
+  @media (prefers-reduced-motion: reduce) { .btn-flow, .bob, .floaty, .caret::after { animation: none; } .dd-panel { transition: none; } }
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<!-- HEADER -->
+<header id="hdr" class="fixed inset-x-0 top-0 z-40 bg-paper/95 border-b border-stone">
+  <div class="hdr-in max-w-wrap mx-auto px-5 lg:px-8 h-20 flex items-center justify-between gap-6">
+    <a href="#home" class="press flex items-center gap-3 shrink-0" aria-label="威舜 VME Group 首頁">
+      <img src="https://valuestme.com/wp-content/uploads/2021/09/網頁用藍底logo.png" alt="威舜 VME Group Logo" class="logo-img h-11 w-auto">
+    </a>
+    <nav class="hidden lg:flex h-full items-stretch text-[15px] font-medium text-inkS" aria-label="主選單">
+      <ul class="flex h-full items-stretch gap-7" id="deskNav"></ul>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button id="searchBtn" class="press w-10 h-10 grid place-items-center rounded-full hover:bg-stone" aria-label="站內搜尋"><i data-lucide="search" class="w-5 h-5"></i></button>
+      <a href="#contact" class="press hidden sm:inline-flex btn-ink bg-ink text-paper text-sm font-medium px-4 py-2.5 rounded-full">預約諮詢</a>
+      <button id="burger" class="press lg:hidden w-10 h-10 grid place-items-center rounded-full hover:bg-stone" aria-label="開啟選單" aria-expanded="false"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+  </div>
+  <div id="mobNav" class="lg:hidden hidden border-t border-stone bg-paper max-h-[78vh] overflow-auto">
+    <nav class="max-w-wrap mx-auto px-5 py-3 text-[16px]" id="mobNavIn" aria-label="手機選單"></nav>
+  </div>
+</header>
+
+<main id="app" class="pt-20">
+
+<!-- ============ HOME ============ -->
+<section data-page="home">
+  <!-- HERO -->
+  <div class="relative overflow-hidden">
+    <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-10 lg:pt-16 pb-14 lg:pb-24 lg:min-h-[82vh] relative">
+      <div class="lg:absolute lg:right-0 lg:top-0 lg:bottom-10 lg:w-[60%] relative h-[44vh] lg:h-auto mb-8 lg:mb-0 -mx-5 lg:mx-0 overflow-hidden" id="heroPhoto">
+        <img src="https://valuestme.com/wp-content/uploads/2022/05/home-banner_0524_04.jpg" alt="威舜 VME Group 顧問與企業主管討論人資規劃" class="absolute inset-0 w-full h-full object-cover">
+        <div id="heroCover" class="absolute inset-0 bg-bronze"></div>
+        <p class="absolute bottom-3 right-4 text-[11px] text-paper/90 bg-ink/60 px-2 py-1 rounded">台北內湖據點・企業人資諮詢現場</p>
+      </div>
+      <div class="relative z-10 lg:max-w-[62%] lg:pt-10">
+        <h1 class="font-head font-black h-xl text-ink">
+          <span class="block overflow-hidden"><span class="hl inline-block bg-paper pr-4">把人事代辦交出來，</span></span>
+          <span class="block overflow-hidden"><span class="hl inline-block bg-paper pr-4">HR 才有時間</span></span>
+          <span class="block overflow-hidden"><span class="hl inline-block bg-paper pr-4 text-bronzeD">談人才。</span></span>
+        </h1>
+        <div class="mt-8 bg-paper lg:pr-6 lg:max-w-[30rem]">
+          <p class="text-lg text-inkS leading-relaxed">威舜 VME Group 站在勞方與資方中間二十多年，替企業處理<br class="hidden sm:block">
+            <span id="typer" class="font-bold text-ink caret">勞資爭議調解</span></p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#contact" class="press btn-flow font-semibold px-6 py-3.5 rounded-full inline-flex items-center gap-2">預約 30 分鐘人資健檢 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <a href="#services" class="press btn-line border border-ink px-6 py-3.5 rounded-full font-medium">看六大服務</a>
+          </div>
+        </div>
+      </div>
+      <a href="#hm-proof" data-scroll class="press hidden lg:flex absolute left-8 bottom-6 items-center gap-2 text-sm text-inkS" aria-label="往下捲動">
+        <i data-lucide="arrow-down" class="w-5 h-5 bob text-bronzeD"></i> 往下看我們處理過的問題
+      </a>
+    </div>
+  </div>
+
+  <!-- PROOF / statement -->
+  <div id="hm-proof" class="bg-ink text-paper relative overflow-hidden">
+    <svg class="floaty absolute -right-16 -top-10 w-72 h-72 opacity-25 pointer-events-none" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="80" fill="none" stroke="#c9a227" stroke-width="1.5"/><circle cx="100" cy="100" r="56" fill="none" stroke="#b07a4f" stroke-width="1"/><path d="M60 70 L100 140 L140 70" fill="none" stroke="#c9a227" stroke-width="2"/></svg>
+    <div class="max-w-wrap mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10">
+      <blockquote class="lg:col-span-7" data-reveal>
+        <p class="font-head text-3xl lg:text-[2.7rem] leading-snug font-bold">「資遣面談前先打一通電話給我們，常常就能省下一場訴訟。」</p>
+        <footer class="mt-5 text-[#d8c7b4] text-sm">— VME 勞資顧問團隊的日常提醒</footer>
+      </blockquote>
+      <dl class="lg:col-span-5 lg:pl-10 lg:border-l border-[#4a423b] grid gap-7 self-end">
+        <div data-reveal><dt class="text-[#d8c7b4] text-sm">深耕台灣人資服務</dt><dd class="font-head text-5xl font-extrabold tnum"><span data-count="20">20</span><span class="text-gold">+</span> 年</dd></div>
+        <div data-reveal><dt class="text-[#d8c7b4] text-sm">協助調解勞資爭議的企業</dt><dd class="font-head text-5xl font-extrabold tnum">上<span data-count="100">100</span><span class="text-gold">+</span> 家</dd></div>
+        <div data-reveal><dt class="text-[#d8c7b4] text-sm">使用招募服務後持續長期合作的客戶</dt><dd class="font-head text-5xl font-extrabold tnum"><span data-count="95">95</span><span class="text-gold">%</span> 以上</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- SERVICES WIPE -->
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-24 lg:pt-32 pb-10">
+    <div class="grid lg:grid-cols-12 gap-6 mb-16">
+      <h2 class="lg:col-span-7 font-head h-lg font-black" data-reveal>從找人、管人<br>到一個人都不能錯的時刻</h2>
+      <p class="lg:col-span-4 lg:col-start-9 text-inkS leading-relaxed self-end" data-reveal>六類服務可以單買，也能依公司規模組合。下面是企業最常找我們的三種情況。</p>
+    </div>
+    <div class="space-y-20 lg:space-y-28" id="hmWipe"></div>
+    <div class="mt-16 flex justify-end"><a href="#services" class="press row-link inline-flex items-center gap-2 font-semibold text-bronzeD">完整服務目錄與合作流程 <i data-lucide="arrow-right" class="row-arrow w-4 h-4"></i></a></div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="bg-stone/60">
+    <div class="max-w-wrap mx-auto px-5 lg:px-8 py-20 lg:py-24">
+      <h2 class="font-head text-3xl lg:text-4xl font-black mb-12" data-reveal>第一次合作，會這樣進行</h2>
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 relative" id="hmSteps"></ol>
+    </div>
+  </div>
+
+  <!-- KNOWLEDGE -->
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="font-head h-lg font-black" data-reveal>HR 這週<br>在問什麼</h2>
+      <p class="mt-5 text-inkS leading-relaxed measure" data-reveal>勞動部公告、勞檢重點、資遣與加班費爭議，人資知識庫每月更新，可以直接搜尋關鍵字。</p>
+      <a href="#knowledge" class="press btn-ink mt-8 inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 rounded-full text-sm font-medium"><i data-lucide="search" class="w-4 h-4"></i> 搜尋人資知識庫</a>
+    </div>
+    <ul class="lg:col-span-8 divide-y divide-stone border-y border-stone" id="hmArticles"></ul>
+  </div>
+
+  <!-- CASES TEASER -->
+  <div class="relative">
+    <div class="grid lg:grid-cols-2">
+      <div class="relative min-h-[46vh] overflow-hidden" data-wipe>
+        <img src="https://images.pexels.com/photos/33175650/pexels-photo-33175650.jpeg?auto=compress&cs=tinysrgb&w=1600" data-img="handshake" data-w="1600" alt="企業主與 VME 顧問完成合作簽約後握手" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+      </div>
+      <div class="bg-bronzeD text-paper px-6 lg:px-16 py-16 lg:py-20 flex flex-col justify-center">
+        <h2 class="font-head text-3xl lg:text-4xl font-black leading-tight" data-reveal>上百家企業的勞資問題，<br>很多都在法院之前解決了</h2>
+        <p class="mt-5 text-[#f1e3d4] leading-relaxed measure" data-reveal>製造業的大量解僱、外商來台的第一位員工、薪資結構外流的調解……案例頁整理了不同產業的處理方式。</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#cases" class="press btn-flow px-6 py-3 rounded-full font-semibold">看客戶案例</a>
+          <img src="https://valuestme.com/wp-content/uploads/2022/08/合作夥伴2_中文.png" alt="合作夥伴：緯航" class="h-12 w-auto bg-paper rounded-md px-3 py-1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="lg:col-span-8 font-head h-xl font-black" data-reveal>下一場勞資爭議，<br><span class="text-bronzeD">可以不用發生。</span></h2>
+      <div class="lg:col-span-4" data-reveal>
+        <p class="text-inkS leading-relaxed">週一至週五 10:00–17:00，直接撥打或留下需求，顧問會在一個工作天內回覆。</p>
+        <a href="tel:+886287919545" class="mt-4 block font-head text-3xl font-extrabold tnum ulink">+886 2 8791 9545</a>
+        <button data-open="consult" class="press btn-flow mt-5 px-6 py-3.5 rounded-full font-semibold inline-flex items-center gap-2"><i data-lucide="message-square" class="w-4 h-4"></i> 快速留下需求</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section data-page="about">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-16 grid lg:grid-cols-12 gap-10">
+    <h1 class="lg:col-span-7 font-head h-xl font-black" data-reveal>勞方與資方之間<br>那座橋</h1>
+    <p class="lg:col-span-4 lg:col-start-9 self-end text-inkS leading-relaxed" data-reveal>持續以和平且有效的方式搭起勞方與資方的橋樑，為勞資雙方達成各自的目標並提升客戶的企業價值，為台灣創造更多勞資雙贏的工作環境。</p>
+  </div>
+  <div class="relative h-[50vh] lg:h-[70vh] overflow-hidden" data-wipe>
+    <img src="https://valuestme.com/wp-content/uploads/2021/07/businessmen-working-strategic-planning.jpg" alt="VME 團隊進行企業人資策略規劃" class="absolute inset-0 w-full h-full object-cover">
+  </div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-20 grid lg:grid-cols-12 gap-10">
+    <h2 class="lg:col-span-4 font-head text-3xl font-black" data-reveal>關於 VME 集團</h2>
+    <div class="lg:col-span-7 lg:col-start-6 text-lg leading-loose text-inkS space-y-5" data-reveal>
+      <p>VME 集團深耕於台灣，Valuest Manager and Employee 是我們於 2021 年 9 月成立的品牌。集團成立二十多年來，一直以純熟且值得信賴的方式搭起資方與勞方的橋樑。</p>
+      <p>我們已協助上百家企業調解數不清的勞資爭議，並補足人力上的缺口與需求。今天的 VME 把這些經驗延伸到獵才、派遣、薪資委外，以及亞洲 PEO/EOR——讓企業內部的 HR 從繁瑣代辦裡解放，回頭專注人才發展與組織成長。</p>
+    </div>
+  </div>
+  <div class="bg-stone/60"><div class="max-w-wrap mx-auto px-5 lg:px-8 py-20">
+    <h2 class="font-head text-3xl font-black mb-10" data-reveal>我們相信的四件事</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+      <figure data-reveal><img src="https://valuestme.com/wp-content/uploads/2021/09/緣分1.png" alt="緣分" class="h-20 w-auto mb-4"><figcaption><b class="font-head text-xl">緣分</b><p class="text-inkS mt-1">我們堅信我們的相遇一定有意義。</p></figcaption></figure>
+      <figure data-reveal><img src="https://valuestme.com/wp-content/uploads/2021/09/信念2.png" alt="信念" class="h-20 w-auto mb-4"><figcaption><b class="font-head text-xl">信念</b><p class="text-inkS mt-1">我們相信我們所努力的一切。</p></figcaption></figure>
+      <figure data-reveal><img src="https://valuestme.com/wp-content/uploads/2021/09/勞資平衡3.png" alt="勞資平衡" class="h-20 w-auto mb-4"><figcaption><b class="font-head text-xl">勞資平衡</b><p class="text-inkS mt-1">持續追尋勞方與資方的平衡點。</p></figcaption></figure>
+      <figure data-reveal><img src="https://valuestme.com/wp-content/uploads/2021/04/變色logo-180x180.png" alt="共存共榮" class="h-20 w-auto mb-4"><figcaption><b class="font-head text-xl">共存共榮</b><p class="text-inkS mt-1">我們會與客戶共同作戰。</p></figcaption></figure>
+    </div>
+  </div></div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-20 grid lg:grid-cols-12 gap-10">
+    <h2 class="lg:col-span-4 font-head text-3xl font-black" data-reveal>公司沿革</h2>
+    <ol class="lg:col-span-8 border-l-2 border-stone pl-8 space-y-10">
+      <li data-reveal class="relative"><span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-bronze"></span><b class="font-head text-lg">二十多年前</b><p class="text-inkS mt-1">集團成立，從勞資協調與人力服務起家。</p></li>
+      <li data-reveal class="relative"><span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-bronze"></span><b class="font-head text-lg">2021.09</b><p class="text-inkS mt-1">Valuest Manager and Employee 品牌成立，整合招募、顧問、訓練與 PEO 服務。</p></li>
+      <li data-reveal class="relative"><span class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-gold"></span><b class="font-head text-lg">現在</b><p class="text-inkS mt-1">延伸至亞洲 PEO/EOR、大量解僱協助與薪資委外，服務在台外商與跨國團隊。</p></li>
+    </ol>
+  </div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pb-24">
+    <h2 class="font-head text-2xl font-black mb-6" data-reveal>活動與講座剪影</h2>
+    <div class="grid grid-cols-3 gap-2 lg:gap-3" id="gallery">
+      <button class="press col-span-2 row-span-2 overflow-hidden rounded-md" data-lightbox="https://valuestme.com/wp-content/uploads/2021/08/1.jpg"><img src="https://valuestme.com/wp-content/uploads/2021/08/1.jpg" alt="VME 講座活動現場 1" class="w-full h-full object-cover aspect-[4/3]"></button>
+      <button class="press overflow-hidden rounded-md" data-lightbox="https://valuestme.com/wp-content/uploads/2021/08/2.jpg"><img src="https://valuestme.com/wp-content/uploads/2021/08/2.jpg" alt="VME 講座活動現場 2" class="w-full h-full object-cover aspect-square"></button>
+      <button class="press overflow-hidden rounded-md" data-lightbox="https://valuestme.com/wp-content/uploads/2021/08/3.jpg"><img src="https://valuestme.com/wp-content/uploads/2021/08/3.jpg" alt="VME 講座活動現場 3" class="w-full h-full object-cover aspect-square"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section data-page="services">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-10 grid lg:grid-cols-12 gap-8">
+    <h1 class="lg:col-span-7 font-head h-xl font-black" data-reveal>服務目錄</h1>
+    <p class="lg:col-span-4 lg:col-start-9 self-end text-inkS leading-relaxed" data-reveal>以下服務範圍都可依個案客製。選一個類別篩選，點進去看能解決什麼問題、包含哪些項目、適合誰。</p>
+  </div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap gap-2 mb-8" id="svcChips" role="tablist" aria-label="服務分類"></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5" id="svcGrid"></div>
+  </div>
+  <div class="bg-ink text-paper mt-24"><div class="max-w-wrap mx-auto px-5 lg:px-8 py-20 lg:py-24">
+    <h2 class="font-head h-lg font-black mb-4" data-reveal>合作流程</h2>
+    <p class="text-[#d8c7b4] mb-12 measure" data-reveal>點選每個步驟，看那個階段雙方要準備什麼。</p>
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 space-y-2" id="flowBtns"></div>
+      <div class="lg:col-span-7 bg-[#2e2925] rounded-xl p-8 lg:p-10 min-h-[260px]" id="flowPanel" aria-live="polite"></div>
+    </div>
+  </div></div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-20 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+    <h2 class="font-head text-3xl font-black" data-reveal>不確定該用哪一項？說說你的狀況就好。</h2>
+    <div class="flex gap-3"><button data-open="consult" class="press btn-flow px-6 py-3.5 rounded-full font-semibold">留下需求</button><a href="#faq" class="press btn-line border border-ink px-6 py-3.5 rounded-full">PEO/EOR 常見問題</a></div>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section data-page="cases">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-10 grid lg:grid-cols-12 gap-8">
+    <h1 class="lg:col-span-8 font-head h-xl font-black" data-reveal>案例，<br>從問題開始讀</h1>
+    <p class="lg:col-span-4 self-end text-inkS leading-relaxed" data-reveal>為保護客戶，案例皆去識別化；以下內容為 demo 示意，正式上線時由威舜提供。</p>
+  </div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pb-24">
+    <div class="flex flex-wrap gap-2 mb-10" id="caseChips"></div>
+    <div id="caseList" class="divide-y divide-stone border-y border-stone"></div>
+    <div class="mt-16 grid sm:grid-cols-[auto_1fr] gap-6 items-center" data-reveal>
+      <span class="text-sm text-inkS">合作夥伴</span>
+      <div class="flex flex-wrap gap-6 items-center">
+        <img src="https://valuestme.com/wp-content/uploads/2022/08/合作夥伴2_中文.png" alt="合作夥伴 緯航" class="h-12 w-auto">
+        <img src="https://valuestme.com/wp-content/uploads/2023/12/NNRoad_logo-300x68.png" alt="合作夥伴 NNRoad" class="h-9 w-auto">
+        <img src="https://valuestme.com/wp-content/uploads/2022/02/420x112.png" alt="合作夥伴標誌" class="h-10 w-auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section data-page="news">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-10">
+    <h1 class="font-head h-xl font-black" data-reveal>最新消息</h1>
+    <p class="mt-4 text-inkS measure" data-reveal>講座活動、人資課程與招募停看聽。點文章可閱讀並分享到 Facebook、LINE、WeChat、X。</p>
+  </div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pb-24">
+    <div class="flex flex-wrap gap-2 mb-10" id="newsChips"></div>
+    <div class="grid lg:grid-cols-12 gap-8" id="newsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section data-page="faq">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-24 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h1 class="font-head h-lg font-black" data-reveal>常見問題</h1>
+      <p class="mt-4 text-inkS leading-relaxed" data-reveal>亞洲 PEO/EOR 對很多企業還很陌生。先在這裡看懂，再決定要不要聊。</p>
+      <div class="mt-8 bg-stone/70 rounded-xl p-6" data-reveal>
+        <p class="font-bold">沒找到你的問題？</p>
+        <p class="text-sm text-inkS mt-1">寫下來，顧問一個工作天內回覆。</p>
+        <button data-open="consult" class="press btn-ink mt-4 bg-ink text-paper px-5 py-2.5 rounded-full text-sm">提出問題</button>
+      </div>
+    </div>
+    <div class="lg:col-span-8" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============ CAREERS ============ -->
+<section data-page="careers">
+  <div class="grid lg:grid-cols-2">
+    <div class="px-5 lg:pl-[max(2rem,calc((100vw-1310px)/2+2rem))] lg:pr-12 pt-16 lg:pt-24 pb-12">
+      <h1 class="font-head h-xl font-black" data-reveal>人才招募</h1>
+      <p class="mt-5 text-inkS leading-relaxed measure" data-reveal>兩種方式加入：成為 VME 的顧問夥伴，或把履歷放進我們的人才庫，有合適的企業職缺時，獵才顧問會主動聯絡你。</p>
+      <ul class="mt-10 divide-y divide-stone border-y border-stone" id="jobList"></ul>
+      <p class="text-xs text-inkS mt-3">職缺為 demo 示意。</p>
+    </div>
+    <div class="relative min-h-[40vh] overflow-hidden" data-wipe="right"><img src="https://images.pexels.com/photos/7693692/pexels-photo-7693692.jpeg?auto=compress&cs=tinysrgb&w=1000" data-img="meeting" data-w="1000" alt="VME 獵才顧問與求職者面談" loading="lazy" class="absolute inset-0 w-full h-full object-cover"></div>
+  </div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-20">
+    <form class="js-form grid md:grid-cols-2 gap-5 max-w-3xl" data-ok="履歷已收到，獵才顧問會在比對職缺後與你聯絡。">
+      <h2 class="md:col-span-2 font-head text-3xl font-black">投遞履歷</h2>
+      <label class="text-sm">姓名 *<input required class="field mt-1" placeholder="王小明"></label>
+      <label class="text-sm">Email *<input required type="email" class="field mt-1" placeholder="name@example.com"></label>
+      <label class="text-sm">應徵 / 期望職務 *<select required class="field mt-1"><option value="">請選擇</option><option>人資顧問（勞資關係）</option><option>獵才顧問</option><option>薪資專員</option><option>加入人才庫</option></select></label>
+      <label class="text-sm">履歷檔案<input type="file" class="field mt-1 text-sm" accept=".pdf,.doc,.docx"></label>
+      <label class="md:col-span-2 text-sm">自我簡介<textarea rows="4" class="field mt-1" placeholder="簡述你的經歷與想找的工作"></textarea></label>
+      <div class="md:col-span-2"><button class="press btn-flow px-7 py-3.5 rounded-full font-semibold">送出履歷</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section data-page="contact">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-16 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h1 class="font-head h-xl font-black" data-reveal>聯絡我們</h1>
+      <dl class="mt-10 space-y-7 text-[15px]">
+        <div data-reveal><dt class="text-inkS text-sm">聯繫電話</dt><dd class="font-head text-2xl font-bold tnum"><a class="ulink" href="tel:+886287919545">+886 2 8791 9545</a></dd><dd class="text-sm text-inkS">星期一至星期五 10:00–17:00</dd></div>
+        <div data-reveal><dt class="text-inkS text-sm">台北據點</dt><dd class="font-medium">台北市內湖區成功路三段141號9樓</dd><dd class="text-sm text-inkS">親訪請提前來電預約</dd></div>
+        <div data-reveal><dt class="text-inkS text-sm">合作邀約</dt><dd><a class="ulink font-medium text-bronzeD" href="mailto:service@valuestme.com">service@valuestme.com</a></dd><dd class="text-sm text-inkS">信件中請詳述問題，並提供聯繫窗口、電話及方便的聯繫時間</dd></div>
+      </dl>
+    </div>
+    <form class="lg:col-span-7 js-form grid sm:grid-cols-2 gap-5 bg-white rounded-xl p-6 lg:p-10 shadow-[0_20px_40px_-28px_rgba(34,30,27,.5)]" data-ok="已收到您的需求，顧問會在一個工作天內與您聯繫。">
+      <label class="text-sm">公司名稱 *<input required class="field mt-1" placeholder="例：某某股份有限公司"></label>
+      <label class="text-sm">聯絡人 *<input required class="field mt-1" placeholder="陳經理"></label>
+      <label class="text-sm">電話 *<input required type="tel" class="field mt-1" placeholder="02-1234-5678"></label>
+      <label class="text-sm">Email *<input required type="email" class="field mt-1" placeholder="hr@company.com"></label>
+      <label class="text-sm">需要的服務<select class="field mt-1"><option>還不確定</option><option>獵才招募 / 派遣</option><option>勞資顧問 / 爭議調解</option><option>大量解僱協助</option><option>薪資委外</option><option>亞洲 PEO / EOR</option><option>員工訓練 / EAPs</option></select></label>
+      <label class="text-sm">公司人數<select class="field mt-1"><option>50 人以下</option><option>50–200 人</option><option>200–500 人</option><option>500 人以上</option></select></label>
+      <label class="sm:col-span-2 text-sm">想討論的問題 *<textarea required rows="5" class="field mt-1" placeholder="例：預計下季縮編 20 人，想確認資遣程序與通報時程"></textarea></label>
+      <label class="sm:col-span-2 text-sm">方便聯繫的時間<input class="field mt-1" placeholder="例：平日下午 2–5 點"></label>
+      <div class="sm:col-span-2"><button class="press btn-flow px-7 py-3.5 rounded-full font-semibold inline-flex items-center gap-2"><i data-lucide="send" class="w-4 h-4"></i>送出諮詢</button></div>
+    </form>
+  </div>
+  <div class="h-[380px] lg:h-[460px] bg-stone" data-reveal>
+    <iframe title="威舜 VME Group 台北據點地圖" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=台北市內湖區成功路三段141號&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- ============ INVESTORS ============ -->
+<section data-page="investors">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h1 class="font-head h-xl font-black" data-reveal>投資者專區</h1>
+      <p class="mt-5 text-inkS leading-relaxed" data-reveal>公司治理與營運相關文件集中於此。文件名稱為 demo 示意，正式上線時由威舜提供實際檔案。</p>
+      <div class="mt-10 border-t border-stone pt-6" data-reveal>
+        <p class="font-bold">投資人關係聯絡</p>
+        <p class="text-inkS text-sm mt-1"><a href="mailto:service@valuestme.com" class="ulink">service@valuestme.com</a>（主旨請註明「投資人關係」）</p>
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      <table class="w-full text-left tnum">
+        <thead><tr class="text-sm text-inkS border-b border-ink"><th class="py-3 font-medium">文件</th><th class="py-3 font-medium hidden sm:table-cell">類型</th><th class="py-3 font-medium text-right">下載</th></tr></thead>
+        <tbody id="dlTable" class="divide-y divide-stone"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KNOWLEDGE ============ -->
+<section data-page="knowledge">
+  <div class="bg-ink text-paper"><div class="max-w-wrap mx-auto px-5 lg:px-8 pt-16 lg:pt-24 pb-14">
+    <h1 class="font-head h-xl font-black" data-reveal>人資知識庫</h1>
+    <label class="mt-8 flex items-center gap-3 bg-paper text-ink rounded-full pl-5 pr-2 py-2 max-w-2xl" data-reveal>
+      <i data-lucide="search" class="w-5 h-5 text-bronzeD shrink-0"></i>
+      <input id="kbInput" type="search" class="flex-1 bg-transparent outline-none py-2 text-base" placeholder="輸入關鍵字，例如：資遣費、加班費、TTQS、勞檢" aria-label="搜尋人資知識庫">
+      <span id="kbCount" class="text-xs text-inkS pr-3 tnum whitespace-nowrap"></span>
+    </label>
+  </div></div>
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-12 pb-24">
+    <div class="flex flex-wrap gap-2 mb-8" id="kbChips"></div>
+    <ul id="kbList" class="divide-y divide-stone border-y border-stone"></ul>
+    <p id="kbEmpty" class="hidden py-16 text-center text-inkS">找不到相關文章。換個關鍵字，或<button data-open="consult" class="ulink text-bronzeD font-medium">直接問顧問</button>。</p>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section data-page="subscribe">
+  <div class="grid lg:grid-cols-12 min-h-[80vh]">
+    <div class="lg:col-span-5 relative min-h-[36vh] overflow-hidden" data-wipe><img src="https://valuestme.com/wp-content/uploads/2021/07/close-up-businessman-with-digital-tablet-1.jpg" alt="人資主管用平板閱讀 VME 電子報" class="absolute inset-0 w-full h-full object-cover"></div>
+    <div class="lg:col-span-7 px-5 lg:px-16 py-16 lg:py-24 flex flex-col justify-center">
+      <h1 class="font-head h-lg font-black" data-reveal>每月一封，<br>勞動部公告先幫你讀過</h1>
+      <p class="mt-5 text-inkS leading-relaxed measure" data-reveal>取得實用的 HR 資訊與 VME Group 最新消息：法令變動重點、講座報名、實務問答。可隨時取消訂閱。</p>
+      <form class="js-form mt-8 grid sm:grid-cols-[1fr_1fr_auto] gap-3 max-w-2xl" data-ok="訂閱成功！下一期電子報會寄到你的信箱。">
+        <input required class="field" placeholder="姓名" aria-label="姓名">
+        <input required type="email" class="field" placeholder="Email *" aria-label="Email">
+        <button class="press btn-flow px-6 py-3 rounded-full font-semibold">訂閱</button>
+        <label class="sm:col-span-3 text-sm text-inkS flex gap-2 items-start"><input required type="checkbox" class="mt-1 accent-[#b07a4f]"> 我同意 VME Group 寄送電子報（必填）</label>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-[#d8c7b4]">
+  <div class="max-w-wrap mx-auto px-5 lg:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+    <div>
+      <p class="font-head text-paper text-2xl font-extrabold tracking-wide">威舜 <span class="text-gold">VME</span></p>
+      <p class="mt-3 leading-relaxed">Valuest Manager and Employee<br>Prosper together with the balance between labor and management.</p>
+    </div>
+    <div><p class="text-paper font-bold mb-3">服務</p><ul class="space-y-2"><li><a href="#services" class="ulink">獵才招募與派遣</a></li><li><a href="#services" class="ulink">勞資顧問</a></li><li><a href="#services" class="ulink">亞洲 PEO / EOR</a></li><li><a href="#knowledge" class="ulink">人資知識庫</a></li></ul></div>
+    <div><p class="text-paper font-bold mb-3">聯絡</p><p class="tnum"><a href="tel:+886287919545" class="ulink">+886 2 8791 9545</a></p><p>週一至週五 10:00–17:00</p><p class="mt-2">台北市內湖區成功路三段141號9樓</p><p class="mt-2"><a href="mailto:service@valuestme.com" class="ulink">service@valuestme.com</a></p></div>
+    <div><p class="text-paper font-bold mb-3">訂閱與追蹤</p><a href="#subscribe" class="press inline-flex btn-flow px-5 py-2.5 rounded-full font-semibold">訂閱電子報</a>
+      <div class="flex gap-2 mt-4"><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook 粉專" class="press float-btn w-10 h-10 grid place-items-center rounded-full border border-[#4a423b]"><i data-lucide="facebook" class="w-4 h-4"></i></a><a href="#news" aria-label="最新消息" class="press float-btn w-10 h-10 grid place-items-center rounded-full border border-[#4a423b]"><i data-lucide="newspaper" class="w-4 h-4"></i></a></div></div>
+  </div>
+  <div class="border-t border-[#3a342f]"><div class="max-w-wrap mx-auto px-5 lg:px-8 py-5 text-xs flex flex-col sm:flex-row justify-between gap-2"><span>© <span id="yr"></span> 威舜 Valuest Manager and Employee｜All Rights Reserved</span><span>design by Morcept</span></div></div>
+</footer>
+
+<!-- FLOATING ICONS -->
+<div class="fixed right-3 bottom-24 lg:top-1/2 lg:bottom-auto lg:-translate-y-1/2 z-30 flex flex-col gap-2">
+  <a href="tel:+886287919545" class="press float-btn w-11 h-11 grid place-items-center rounded-full bg-white text-ink shadow-[0_8px_20px_-10px_rgba(34,30,27,.5)]" aria-label="撥打電話"><i data-lucide="phone" class="w-5 h-5"></i></a>
+  <a href="mailto:service@valuestme.com" class="press float-btn w-11 h-11 grid place-items-center rounded-full bg-white text-ink shadow-[0_8px_20px_-10px_rgba(34,30,27,.5)]" aria-label="寄送 Email"><i data-lucide="mail" class="w-5 h-5"></i></a>
+  <button data-open="consult" class="press float-btn w-11 h-11 grid place-items-center rounded-full bg-white text-ink shadow-[0_8px_20px_-10px_rgba(34,30,27,.5)]" aria-label="快速諮詢"><i data-lucide="message-circle" class="w-5 h-5"></i></button>
+  <button id="toTop" class="press float-btn w-11 h-11 grid place-items-center rounded-full bg-ink text-paper shadow-[0_8px_20px_-10px_rgba(34,30,27,.5)]" aria-label="回到頂部"><i data-lucide="arrow-up" class="w-5 h-5"></i></button>
+</div>
+
+<!-- COOKIE -->
+<div id="cookie" class="fixed left-3 right-3 sm:left-5 sm:right-auto bottom-3 sm:max-w-md z-40 bg-white rounded-xl p-5 shadow-[0_16px_36px_-16px_rgba(34,30,27,.5)] text-sm">
+  <p>本網站使用必要 Cookie 以維持基本功能與分析瀏覽品質。</p>
+  <div class="mt-3 flex gap-2"><button class="press btn-ink bg-ink text-paper px-4 py-2 rounded-full" data-cookie>同意</button><button class="press btn-line border border-ink px-4 py-2 rounded-full" data-cookie>僅必要</button></div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden-m fixed inset-0 z-50 bg-ink/60 grid place-items-center p-4" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="panel relative bg-paper rounded-xl w-full max-w-2xl max-h-[88vh] overflow-auto shadow-[0_30px_60px_-20px_rgba(0,0,0,.5)]">
+    <button id="mClose" class="press absolute right-3 top-3 w-10 h-10 grid place-items-center rounded-full hover:bg-stone z-10" aria-label="關閉"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div id="mBody" class="p-6 lg:p-10"></div>
+  </div>
+</div>
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[60] bg-ink text-paper px-5 py-3 rounded-full text-sm shadow-lg opacity-0 pointer-events-none transition-opacity duration-200"></div>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script>
+/* ---------- DATA ---------- */
+const NAV = [
+  { k:'home', n:'首頁' },
+  { k:'about', n:'關於威舜', sub:[
+    ['about','關於我們','理念、沿革與活動剪影','landmark'],
+    ['careers','人才招募','顧問職缺與求職人才庫','user-plus'],
+    ['investors','投資者專區','公司治理與文件下載','file-text']
+  ]},
+  { k:'services', n:'服務項目', mega:true },
+  { k:'cases', n:'客戶案例' },
+  { k:'resources', n:'人資資源', sub:[
+    ['knowledge','人資知識庫','資遣、加班費、勞檢，關鍵字直接搜','book-open'],
+    ['news','最新消息','講座活動、人資課程、招募停看聽','calendar-days'],
+    ['faq','常見問題','PEO / EOR 與合作方式一次看懂','circle-help'],
+    ['subscribe','訂閱電子報','每月一封，法令變動先幫你讀過','mail-open']
+  ]},
+  { k:'contact', n:'聯絡我們' }
+];
+
+const SERVICES = [
+  { id:'hunt', cat:'獵才招募', title:'專業獵才與人資外包', img:'meeting', items:['全面獵才','人資外包','不適任員工管理'],
+    pain:'面試 5 人才到職 1 人、招募天數拉長、試用期一過人就走。',
+    desc:'VME 獵才顧問透過主動 / 被動、線上 / 線下管道網羅各階層人才，面試前先做勞動法令風險評估，避免問到《就業服務法》不允許的隱私問題；並將試用期納入合約條款，以長期在職作為目標。',
+    fit:'物流、製造等缺工產業；百人以上、每月招募預算高的企業。' },
+  { id:'consult', cat:'勞資顧問', title:'顧問專案與爭議調解', img:'handshake', items:['勞動規則審視','爭議調解','職災處理','大量解僱協助'],
+    pain:'勞檢前不知道哪裡會被罰；資遣、加班費爭議眼看要進入訴訟。',
+    desc:'審視工作規則與勞動契約，降低違法風險；在爭議進入訴訟前協助雙方協商；職災發生時協助申請理賠與賠償，穩定人事成本。縮編或大量解僱時，協助規劃通報時程、資遣面談與文件。',
+    fit:'正在面對勞資爭議、準備縮編、或剛收到勞檢通知的企業。' },
+  { id:'train', cat:'員工訓練', title:'員工訓練', img:'education', items:['教育訓練','工作安全意識','職場倫理道德'],
+    pain:'資深員工經驗傳不下去；職安意識不足，事故風險高。',
+    desc:'依企業需求規劃技能、職安與職業倫理課程，提升整體企業價值，並協助導入 TTQS 人才發展品質管理系統與政府補助申請。',
+    fit:'想系統化培訓、或準備申請 TTQS 的中小企業。' },
+  { id:'peo', cat:'PEO', title:'PEO 專業雇主組織', img:'laptop', items:['人力派遣','薪資服務','保險理賠','差勤管理'],
+    pain:'HR 人力只有一兩位，卻要處理全公司的勞健保、差勤與薪資。',
+    desc:'由 VME 協助招募與管理旗下員工，提供薪資結構設計、勞健保與職災保險處理、差勤與工時相關薪資結算。企業保有管理權，行政由我們承接。',
+    fit:'成長中的新創、需要彈性人力的專案型企業。' },
+  { id:'eor', cat:'EOR', title:'亞洲 EOR 名義雇主', img:'city', items:['薪資委外','勞動基準議題','職災處理及預防'],
+    pain:'想在台灣或亞洲聘人，但還沒設立當地公司。',
+    desc:'由 VME 擔任名義雇主，代為處理聘僱、薪資發放與法令遵循，並注意勞資法令變動、依職安衛與職災保險法協助職災處理與預防。',
+    fit:'在台設點前的外商、遠端招募亞洲人才的跨國團隊。' },
+  { id:'eap', cat:'EAPs', title:'員工照顧系統 EAPs', img:'office', items:['人才發展品質管理系統','三節獎金','每季餐會'],
+    pain:'福利想做得好，但沒有人力規劃與執行。',
+    desc:'系統化規劃人員培訓計畫，協助發放春節、端午、中秋等節慶禮金，並安排定期 / 不定期的員工餐敘活動。',
+    fit:'重視留才、想把福利制度化的企業。' }
+];
+
+const STEPS = [
+  { t:'需求訪談', d:'電話或到府了解公司規模、產業、目前遇到的問題。', p:'企業準備：組織圖、目前人資分工、最想先解決的事。' },
+  { t:'現況診斷', d:'檢視工作規則、勞動契約、薪資與差勤制度，找出風險點。', p:'企業準備：工作規則、勞動契約範本、近一年爭議紀錄。' },
+  { t:'方案與報價', d:'依診斷結果提出服務組合、時程與費用，可單項或組合。', p:'VME 提供：書面建議書與報價，說明各項目範圍。' },
+  { t:'簽約導入', d:'確認交接窗口，建立資料與流程，開始執行。', p:'雙方確認：權責分工、資料交付方式、回報頻率。' },
+  { t:'定期檢視', d:'定期回報執行狀況，並隨法令變動調整做法。', p:'VME 提供：定期報告與法令異動提醒。' }
+];
+
+const ARTICLES = [
+  ['2026.5.20','員工被資遣後要請謀職假，HR 該怎麼管理才不違法又顧到交接？','勞動法令',['資遣','勞基法','員工管理']],
+  ['2026.5.7','【組織發展】組織調整為何總失敗？讓組織圖真正落地的實戰解法','組織發展',['企業必知','組織']],
+  ['2026.4.8','【勞資糾紛】員工爭加班費時一併主張精神慰撫金，HR 該如何判斷與應對？','勞資糾紛',['加班費','勞資關係']],
+  ['2026.3.24','【TTQS 導入指南】中小企業如何運用 AI 語音技術，實現資深員工經驗無痛傳承？','教育訓練',['TTQS','教育訓練']],
+  ['2026.3.5','【中小企業成長藍圖】TTQS 完整導入策略與政府補助申請指南','教育訓練',['TTQS','補助']],
+  ['2026.2.24','外包廠商更換之人員轉移實務：勞動契約定性、年資處理與權益銜接指引','勞動法令',['年資','派遣']],
+  ['2026.1.30','薪資結構外流！企業營業秘密外洩調解策略完整指南','勞資糾紛',['營業秘密','薪資']],
+  ['2026.1.22','勞資爭議預防指南：如何透過合意協商與完備程序，落實資遣面談的專業性與合法性','勞資糾紛',['資遣','勞資關係']],
+  ['2026.1.8','【勞資關係】掌握績效考核面談關鍵：三步驟建立具法律效力的職能表現會議紀錄','績效考核',['不適任人員','績效']],
+  ['2025.12.26','派遣人員調職調動怎麼做才合規？要派單位與派遣公司必懂的調動五原則','勞動法令',['派遣','勞基法']],
+  ['2025.12.12','勞動部 2025 年 12 月公告解析－2026 的工時改革趨勢及職場合理行政指導','時事分析',['官方資訊','工時']],
+  ['2025.12.5','勞動部 2025 年 11 月公告解析－2026 請假新制及減班休息應對策略','時事分析',['官方資訊','請假']],
+  ['2025.11.19','面試官小心～問了這些事可能會違法！企業招募必知的 4 大違法風險與改善對策','勞動法令',['招募','就業服務法']],
+  ['2025.10.17','【勞資爭議解析】延遲支付資遣費 53 元遭罰 10 萬元！企業必知的資遣費規定與罰則','勞資糾紛',['資遣費','勞檢']],
+  ['2024.8.29','無預警停電要直接放有薪假嗎？主管必知的面對勞檢的突發事件管理技巧','勞動法令',['勞檢','意外處理']],
+  ['2023.11.16','勞檢策略之『試用期篇』','績效考核',['PIP','試用期']]
+];
+
+const CASES = [
+  { tag:'勞資顧問', ind:'傳統製造業｜約 300 人', q:'產線轉移需縮編，擔心大量解僱引發抗爭與裁罰。', a:'協助排定通報時程、準備資遣面談話術與文件，逐一說明資遣費與謀職假權益。', r:'縮編依程序完成，未進入訴訟（示意）。', img:'factory' },
+  { tag:'EOR', ind:'日商軟體公司｜台灣尚未設點', q:'想先在台灣聘 3 位工程師試水溫，但還不想設立子公司。', a:'由 VME 擔任名義雇主，處理勞動契約、勞健保與每月薪資發放。', r:'約一個月內完成首位員工到職（示意）。', img:'tech' },
+  { tag:'獵才招募', ind:'物流業｜倉儲據點', q:'旺季缺工，面試到職率低，試用期流失嚴重。', a:'多管道主動招募，試用期納入合約條款並追蹤留任。', r:'改為長期合作，持續補足人力（示意）。', img:'warehouse' },
+  { tag:'勞資顧問', ind:'科技業｜研發團隊', q:'薪資結構外流，員工間產生不滿與爭議。', a:'以營業秘密與勞資關係角度調解，重新整理保密規範。', r:'爭議以協商落幕（示意）。', img:'laptop' },
+  { tag:'PEO', ind:'新創團隊｜約 40 人', q:'只有一位行政兼 HR，勞健保與差勤常常出錯。', a:'導入 PEO，薪資結算、保險加退保與差勤由 VME 承接。', r:'行政人力回到招募與文化工作（示意）。', img:'office' }
+];
+
+const NEWS = [
+  { cat:'講座活動', date:'2026.5.12', t:'2026 請假新制實務說明會（示意）', img:'meeting', s:'請假新制上路前，帶 HR 逐條看懂制度調整與工作規則該怎麼改。' },
+  { cat:'人資課程', date:'2026.4.20', t:'資遣面談實作工作坊（示意）', img:'education', s:'從面談準備、話術到會議紀錄，模擬三種常見情境。' },
+  { cat:'招募停看聽', date:'2026.3.30', t:'面試官的 4 個地雷問題（示意）', img:'laptop', s:'《就業服務法》下，哪些問題不能問？換成什麼問法才合法。' },
+  { cat:'講座活動', date:'2026.2.18', t:'外商來台聘僱：EOR 入門講座（示意）', img:'city', s:'還沒設立公司，也能合法雇用台灣員工嗎？一次講清楚。' }
+];
+
+const FAQS = [
+  ['PEO / EOR','PEO 和 EOR 差在哪裡？','PEO（專業雇主組織）是你已經是雇主，把薪資、勞健保、差勤等行政交給我們共同處理；EOR（名義雇主）是你在當地還沒有公司，由 VME 擔任法律上的雇主，替你聘僱員工。'],
+  ['PEO / EOR','外商還沒在台灣設立公司，可以先聘員工嗎？','可以透過 EOR。員工與 VME 簽訂勞動契約，工作內容由你的團隊指派，薪資、勞健保與法令遵循由我們處理。'],
+  ['PEO / EOR','用 EOR 聘的員工，權益會比較少嗎？','不會。員工依台灣《勞動基準法》享有完整權益，包含勞健保、特休與資遣相關保障。'],
+  ['PEO / EOR','費用怎麼計算？','依員工人數、服務範圍與國家地區而定，需求訪談後會提供書面報價。'],
+  ['勞資顧問','已經被員工申請勞資調解了，現在找你們來得及嗎？','來得及。越早介入越能整理事實與文件，協助避免進入訴訟程序。'],
+  ['勞資顧問','公司要縮編，大量解僱協助包含哪些？','協助確認是否達大量解僱門檻、通報時程、資遣面談安排與資遣費計算，降低違法風險。'],
+  ['獵才招募','獵才服務適用哪些職級？','無論基層或中高階人才都可以，並會依職缺調整主動 / 被動招募管道。'],
+  ['合作方式','服務可以只買一項嗎？','可以。所有服務都可單項委託，也可依公司規模組合，服務範圍可依個案客製。']
+];
+
+const JOBS = [['人資顧問（勞資關係）','台北內湖｜全職'],['獵才顧問','台北內湖｜全職'],['薪資專員','台北內湖｜全職']];
+const DLS = [['公司簡介','PDF'],['服務說明手冊','PDF'],['公司治理相關資訊','PDF'],['重大訊息公告彙整','PDF']];
+
+/* ---------- HELPERS ---------- */
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const icons = () => window.lucide && lucide.createIcons();
+function toast(m) { const t = $('#toast'); t.textContent = m; t.style.opacity = 1; clearTimeout(t._h); t._h = setTimeout(() => t.style.opacity = 0, 2600); }
+const modal = $('#modal');
+function openModal(html) { $('#mBody').innerHTML = html; modal.classList.remove('hidden-m'); modal.setAttribute('aria-hidden', 'false'); icons(); bindForms($('#mBody')); window.__lenis && window.__lenis.stop(); setTimeout(() => $('#mClose').focus(), 50); }
+function closeModal() { modal.classList.add('hidden-m'); modal.setAttribute('aria-hidden', 'true'); window.__lenis && window.__lenis.start(); }
+$('#mClose').onclick = closeModal; modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+function bindForms(root = document) {
+  $$('form.js-form', root).forEach(f => { if (f._b) return; f._b = 1; f.addEventListener('submit', e => {
+    e.preventDefault();
+    f.innerHTML = `<div class="col-span-full py-8 flex gap-4 items-start"><span class="w-12 h-12 shrink-0 rounded-full bg-gold grid place-items-center"><i data-lucide="check" class="w-6 h-6"></i></span><div><p class="font-head text-2xl font-black">已送出</p><p class="text-inkS mt-1">${f.dataset.ok || '感謝您的填寫。'}</p></div></div>`; icons();
+  }); });
+}
+const consultForm = () => `<h2 class="font-head text-3xl font-black pr-10">快速留下需求</h2><p class="text-inkS mt-2 mb-6">顧問一個工作天內回覆。</p>
+<form class="js-form grid gap-4" data-ok="已收到，顧問會盡快與您聯繫。">
+<label class="text-sm">公司 / 聯絡人 *<input required class="field mt-1" placeholder="某某公司 陳經理"></label>
+<label class="text-sm">電話或 Email *<input required class="field mt-1" placeholder="02-1234-5678"></label>
+<label class="text-sm">想討論的事 *<textarea required rows="3" class="field mt-1" placeholder="例：外商想在台聘 2 位業務"></textarea></label>
+<button class="press btn-flow px-6 py-3 rounded-full font-semibold justify-self-start">送出</button></form>`;
+
+/* ---------- NAV (dropdown + mega menu) ---------- */
+const groupOf = it => it.mega ? 'services' : it.sub.map(s => s[0]).join(' ');
+const trig = it => `<button class="dd-trig navlink press inline-flex items-center gap-1 whitespace-nowrap" data-group="${groupOf(it)}" aria-haspopup="true" aria-expanded="false">${it.n}<i data-lucide="chevron-down" class="dd-chev w-4 h-4"></i></button>`;
+const ddPanel = it => `<div class="dd-panel absolute -left-5 top-full w-[340px]" role="menu">
+  <div class="bg-white rounded-xl p-2 shadow-[0_24px_48px_-22px_rgba(34,30,27,.45)] border-t-2 border-gold">
+  ${it.sub.map(([k, n, d, ic]) => `<a href="#${k}" data-nav="${k}" role="menuitem" class="dd-item flex items-center gap-3.5 rounded-lg px-3 py-3">
+    <span class="dd-ico w-10 h-10 shrink-0 rounded-full bg-stone text-bronzeD grid place-items-center"><i data-lucide="${ic}" class="w-[18px] h-[18px]"></i></span>
+    <span class="flex-1 min-w-0"><b class="block font-head text-[15px] text-ink transition-colors">${n}</b><span class="block text-[13px] text-inkS font-normal leading-snug mt-0.5">${d}</span></span>
+    <i data-lucide="arrow-right" class="dd-arr w-4 h-4 shrink-0"></i></a>`).join('')}
+  </div></div>`;
+const megaPanel = () => `<div class="dd-panel absolute left-0 right-0 top-full" role="menu">
+  <div class="bg-white border-t border-stone shadow-[0_30px_50px_-30px_rgba(34,30,27,.5)]"><div class="max-w-wrap mx-auto px-8 py-8 grid grid-cols-12 gap-8">
+    <div class="col-span-8">
+      <div class="flex items-baseline justify-between pb-3 border-b-2 border-ink">
+        <p class="font-head text-xl font-black text-ink">六類服務，可單買也能組合</p>
+        <a href="#services" data-svcgo="全部" class="press row-link inline-flex items-center gap-1.5 text-sm font-semibold text-bronzeD">服務總覽與合作流程 <i data-lucide="arrow-right" class="row-arrow w-4 h-4"></i></a>
+      </div>
+      <ul class="grid grid-cols-2 gap-x-6">${SERVICES.map(s => `<li><a href="#services" data-svcgo="${s.cat}" role="menuitem" class="dd-item flex items-start gap-4 px-3 py-4 border-b border-stone rounded-md">
+        <span class="text-xs font-semibold text-bronzeD w-16 pt-1 shrink-0">${s.cat}</span>
+        <span class="flex-1 min-w-0"><b class="block font-head text-[16px] text-ink transition-colors">${s.title}</b><span class="block text-[13px] text-inkS font-normal mt-1">${s.items.join('・')}</span></span>
+        <i data-lucide="arrow-right" class="dd-arr w-4 h-4 mt-1 shrink-0"></i></a></li>`).join('')}</ul>
+    </div>
+    <div class="col-span-4 bg-ink text-paper rounded-xl p-7 flex flex-col">
+      <p class="font-head text-2xl font-black leading-snug">不確定該用哪一項？</p>
+      <p class="text-[#d8c7b4] text-sm font-normal mt-2 leading-relaxed">說說公司規模和遇到的狀況，顧問一個工作天內回覆，先免費做 30 分鐘人資健檢。</p>
+      <a href="tel:+886287919545" class="mt-5 font-head text-2xl font-extrabold tnum ulink">+886 2 8791 9545</a>
+      <p class="text-xs text-[#d8c7b4] font-normal">週一至週五 10:00–17:00</p>
+      <div class="mt-auto pt-6 flex flex-wrap gap-2">
+        <button data-open="consult" class="press btn-flow px-5 py-2.5 rounded-full text-sm font-semibold">快速留下需求</button>
+        <a href="#cases" class="press border border-[#6b5f55] text-paper px-5 py-2.5 rounded-full text-sm hover:bg-[#2e2925]">看客戶案例</a>
+      </div>
+    </div>
+  </div></div></div>`;
+$('#deskNav').innerHTML = NAV.map(it => {
+  if (it.mega) return `<li class="dd h-full flex items-center">${trig(it)}${megaPanel()}</li>`;
+  if (it.sub) return `<li class="dd relative h-full flex items-center">${trig(it)}${ddPanel(it)}</li>`;
+  return `<li class="h-full flex items-center"><a href="#${it.k}" data-nav="${it.k}" class="navlink press whitespace-nowrap">${it.n}</a></li>`;
+}).join('');
+
+const mobSub = (href, n, d, extra = '') => `<a href="${href}" ${extra} class="mlink press flex flex-col pl-4 py-2.5 border-l-2 border-stone ml-1"><span class="font-medium">${n}</span>${d ? `<span class="text-[13px] text-inkS">${d}</span>` : ''}</a>`;
+$('#mobNavIn').innerHTML = NAV.map(it => {
+  if (!it.sub && !it.mega) return `<a href="#${it.k}" data-nav="${it.k}" class="mlink press block py-3.5 border-b border-stone font-medium">${it.n}</a>`;
+  const body = it.mega
+    ? mobSub('#services', '服務總覽與合作流程', '', 'data-svcgo="全部"') + SERVICES.map(s => mobSub('#services', s.title, s.cat, `data-svcgo="${s.cat}"`)).join('')
+    : it.sub.map(([k, n, d]) => mobSub('#' + k, n, d, `data-nav="${k}"`)).join('');
+  return `<div class="acc border-b border-stone"><button class="acc-btn press w-full flex justify-between items-center py-3.5 font-medium text-left" aria-expanded="false" data-group="${groupOf(it)}">${it.n}<i data-lucide="plus" class="acc-ico w-5 h-5 text-bronzeD"></i></button>
+  <div class="acc-body"><div class="overflow-hidden"><div class="pb-4 space-y-1">${body}</div></div></div></div>`;
+}).join('');
+
+const burger = $('#burger');
+burger.onclick = () => { const o = $('#mobNav').classList.toggle('hidden'); burger.setAttribute('aria-expanded', String(!o)); };
+function closeDd(except) { $$('#deskNav .dd').forEach(d => { if (d !== except) { d.classList.remove('open'); const b = d.querySelector('.dd-trig'); b && b.setAttribute('aria-expanded', 'false'); } }); }
+$$('#deskNav .dd').forEach(d => {
+  const b = d.querySelector('.dd-trig');
+  b.addEventListener('click', e => { e.stopPropagation(); const o = !d.classList.contains('open'); closeDd(d); d.classList.toggle('open', o); d.classList.remove('shut'); b.setAttribute('aria-expanded', String(o)); });
+  d.addEventListener('mouseleave', () => d.classList.remove('shut'));
+  d.addEventListener('click', e => { if (e.target.closest('a,[data-open]')) { d.classList.remove('open'); d.classList.add('shut'); b.setAttribute('aria-expanded', 'false'); document.activeElement && document.activeElement.blur(); } });
+});
+document.addEventListener('click', e => { if (!e.target.closest('#deskNav')) closeDd(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDd(); closeModal(); } });
+$$('#mobNavIn .acc-btn').forEach(b => b.onclick = () => { const a = b.closest('.acc'); const o = a.classList.toggle('open'); b.setAttribute('aria-expanded', String(o)); });
+$('#mobNavIn').addEventListener('click', e => { if (e.target.closest('a')) { $('#mobNav').classList.add('hidden'); burger.setAttribute('aria-expanded', 'false'); } });
+
+/* ---------- RENDER ---------- */
+let svcFilter = '全部';
+document.addEventListener('click', e => { const g = e.target.closest('[data-svcgo]'); if (g) { svcFilter = g.dataset.svcgo; renderSvc(); } });
+
+$('#hmWipe').innerHTML = SERVICES.slice(0, 3).map((s, i) => `
+<article class="grid lg:grid-cols-12 gap-8 items-center">
+  <div class="lg:col-span-6 ${i % 2 ? 'lg:order-2 lg:col-start-7' : ''} relative aspect-[4/3] overflow-hidden rounded-xl" data-wipe="${i % 2 ? 'right' : ''}">
+    <img data-img="${s.img}" data-w="1000" alt="${s.title}服務情境" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+  </div>
+  <div class="lg:col-span-5 ${i % 2 ? 'lg:order-1' : 'lg:col-start-8'}" data-reveal>
+    <p class="text-sm font-semibold text-bronzeD">${s.cat}</p>
+    <h3 class="font-head text-3xl font-black mt-2">${s.title}</h3>
+    <p class="mt-4 text-ink font-medium">「${s.pain}」</p>
+    <p class="mt-3 text-inkS leading-relaxed">${s.desc}</p>
+    <button data-svc="${s.id}" class="press row-link mt-5 inline-flex items-center gap-2 font-semibold text-bronzeD">看包含哪些項目 <i data-lucide="arrow-right" class="row-arrow w-4 h-4"></i></button>
+  </div>
+</article>`).join('');
+
+$('#hmSteps').innerHTML = STEPS.map((s, i) => `<li data-step class="relative"><span class="font-head text-sm font-bold text-bronzeD tnum">步驟 ${i + 1}</span><h3 class="font-head text-xl font-black mt-2">${s.t}</h3><p class="text-inkS text-sm mt-2 leading-relaxed">${s.d}</p></li>`).join('');
+
+const artRow = a => `<li><button data-art="${ARTICLES.indexOf(a)}" class="press row-link w-full text-left py-5 grid sm:grid-cols-[110px_1fr_auto] gap-2 sm:gap-6 items-start">
+  <span class="text-sm text-inkS tnum">${a[0]}</span><span><h3 class="font-medium text-[17px] leading-snug transition-colors">${a[1]}</h3><span class="text-xs text-bronzeD mt-1.5 block">${a[2]}・${a[3].map(t => '#' + t).join(' ')}</span></span>
+  <i data-lucide="arrow-up-right" class="row-arrow w-5 h-5 text-bronzeD hidden sm:block"></i></button></li>`;
+$('#hmArticles').innerHTML = ARTICLES.slice(0, 5).map(artRow).join('');
+
+function chips(el, list, cur, fn) { el.innerHTML = list.map(c => `<button class="chip press border border-[#cfc7ba] rounded-full px-4 py-2 text-sm ${c === cur ? 'on' : ''}" data-c="${c}">${c}</button>`).join(''); $$('.chip', el).forEach(b => b.onclick = () => fn(b.dataset.c)); }
+
+function renderSvc() {
+  chips($('#svcChips'), ['全部', ...SERVICES.map(s => s.cat)], svcFilter, c => { svcFilter = c; renderSvc(); });
+  $('#svcGrid').innerHTML = SERVICES.filter(s => svcFilter === '全部' || s.cat === svcFilter).map(s => `
+  <button data-svc="${s.id}" class="press card-h text-left bg-white rounded-xl overflow-hidden flex flex-col">
+    <div class="aspect-[16/9] overflow-hidden"><img data-img="${s.img}" data-w="600" alt="${s.title}" loading="lazy" class="w-full h-full object-cover"></div>
+    <div class="p-6 flex-1 flex flex-col"><span class="text-xs font-semibold text-bronzeD">${s.cat}</span><h3 class="font-head text-xl font-black mt-1">${s.title}</h3>
+    <p class="text-sm text-inkS mt-2 leading-relaxed">${s.pain}</p><p class="mt-auto pt-4 text-sm font-medium">${s.items.join('・')}</p></div>
+  </button>`).join('');
+  window.__fillImg && window.__fillImg();
+}
+renderSvc();
+
+let flowI = 0;
+function renderFlow() {
+  $('#flowBtns').innerHTML = STEPS.map((s, i) => `<button class="step-btn press w-full flex items-center gap-4 text-left py-3 ${i === flowI ? 'on' : ''}" data-i="${i}"><span class="step-dot w-10 h-10 rounded-full border border-[#6b5f55] grid place-items-center font-head font-bold tnum">${i + 1}</span><span class="font-head text-lg ${i === flowI ? 'text-paper' : 'text-[#d8c7b4]'}">${s.t}</span></button>`).join('');
+  const s = STEPS[flowI];
+  $('#flowPanel').innerHTML = `<p class="text-gold font-head font-bold tnum">步驟 ${flowI + 1} / ${STEPS.length}</p><h3 class="font-head text-3xl font-black mt-2">${s.t}</h3><p class="mt-4 text-[#e9dccd] leading-relaxed">${s.d}</p><p class="mt-6 pt-6 border-t border-[#4a423b] text-[#d8c7b4]">${s.p}</p>`;
+  $$('#flowBtns .step-btn').forEach(b => b.onclick = () => { flowI = +b.dataset.i; renderFlow(); });
+}
+renderFlow();
+
+let caseF = '全部';
+function renderCases() {
+  chips($('#caseChips'), ['全部', ...new Set(CASES.map(c => c.tag))], caseF, c => { caseF = c; renderCases(); });
+  $('#caseList').innerHTML = CASES.filter(c => caseF === '全部' || c.tag === caseF).map(c => `
+  <article class="py-10 grid lg:grid-cols-12 gap-6 items-start">
+    <div class="lg:col-span-3 aspect-[4/3] overflow-hidden rounded-lg"><img data-img="${c.img}" data-w="600" alt="${c.ind}案例情境" loading="lazy" class="w-full h-full object-cover"></div>
+    <div class="lg:col-span-9 grid md:grid-cols-3 gap-6">
+      <div class="md:col-span-3"><span class="text-xs font-semibold text-bronzeD">${c.tag}</span><h3 class="font-head text-2xl font-black">${c.ind}</h3></div>
+      <div><p class="text-sm text-inkS">問題</p><p class="mt-1">${c.q}</p></div>
+      <div><p class="text-sm text-inkS">我們做了什麼</p><p class="mt-1">${c.a}</p></div>
+      <div><p class="text-sm text-inkS">結果</p><p class="mt-1 font-medium text-bronzeD">${c.r}</p></div>
+    </div>
+  </article>`).join('');
+  window.__fillImg && window.__fillImg();
+}
+renderCases();
+
+let newsF = '全部';
+function renderNews() {
+  chips($('#newsChips'), ['全部', '講座活動', '人資課程', '招募停看聽'], newsF, c => { newsF = c; renderNews(); });
+  $('#newsGrid').innerHTML = NEWS.filter(n => newsF === '全部' || n.cat === newsF).map((n, i) => `
+  <button data-news="${NEWS.indexOf(n)}" class="press card-h text-left ${i === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} bg-white rounded-xl overflow-hidden">
+    <div class="aspect-[16/9] overflow-hidden"><img data-img="${n.img}" data-w="1000" alt="${n.t}" loading="lazy" class="w-full h-full object-cover"></div>
+    <div class="p-6"><p class="text-xs text-bronzeD font-semibold">${n.cat}・<span class="tnum">${n.date}</span></p><h3 class="font-head text-xl font-black mt-1">${n.t}</h3><p class="text-sm text-inkS mt-2">${n.s}</p></div>
+  </button>`).join('');
+  window.__fillImg && window.__fillImg();
+}
+renderNews();
+
+$('#faqList').innerHTML = [...new Set(FAQS.map(f => f[0]))].map(g => `<h2 class="font-head text-lg font-black mt-10 first:mt-0 mb-2 text-bronzeD">${g}</h2>` + FAQS.filter(f => f[0] === g).map(f => `
+  <div class="acc border-b border-stone"><button class="faq-btn press w-full flex justify-between items-center gap-4 py-5 text-left font-medium text-[17px]" aria-expanded="false">${f[1]}<i data-lucide="plus" class="acc-ico w-5 h-5 shrink-0 text-bronzeD"></i></button>
+  <div class="acc-body"><div class="overflow-hidden"><p class="pb-6 text-inkS leading-relaxed measure">${f[2]}</p></div></div></div>`).join('')).join('');
+$$('.faq-btn').forEach(b => b.onclick = () => { const o = b.parentElement.classList.toggle('open'); b.setAttribute('aria-expanded', String(o)); });
+
+$('#jobList').innerHTML = JOBS.map(j => `<li><button data-job="${j[0]}" class="press row-link w-full flex justify-between items-center py-5 text-left"><span><h3 class="font-head text-xl font-black transition-colors">${j[0]}</h3><span class="text-sm text-inkS">${j[1]}</span></span><i data-lucide="arrow-right" class="row-arrow w-5 h-5 text-bronzeD"></i></button></li>`).join('');
+$('#dlTable').innerHTML = DLS.map(d => `<tr><td class="py-4 font-medium">${d[0]}（示意）</td><td class="py-4 hidden sm:table-cell text-inkS">${d[1]}</td><td class="py-4 text-right"><button data-dl="${d[0]}" class="press btn-line inline-flex items-center gap-1.5 border border-ink rounded-full px-4 py-1.5 text-sm"><i data-lucide="download" class="w-4 h-4"></i>下載</button></td></tr>`).join('');
+
+let kbF = '全部';
+function renderKb() {
+  const q = $('#kbInput').value.trim().toLowerCase();
+  chips($('#kbChips'), ['全部', ...new Set(ARTICLES.map(a => a[2]))], kbF, c => { kbF = c; renderKb(); });
+  const list = ARTICLES.filter(a => (kbF === '全部' || a[2] === kbF) && (!q || (a[1] + a[3].join(' ')).toLowerCase().includes(q)));
+  $('#kbList').innerHTML = list.map(artRow).join('');
+  $('#kbCount').textContent = list.length + ' 篇';
+  $('#kbEmpty').classList.toggle('hidden', list.length > 0);
+  icons();
+}
+$('#kbInput').addEventListener('input', renderKb);
+renderKb();
+
+/* ---------- DELEGATED ACTIONS ---------- */
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-open],[data-svc],[data-art],[data-news],[data-job],[data-dl],[data-lightbox],[data-cookie]');
+  if (!t) return;
+  if (t.dataset.open) openModal(consultForm());
+  else if (t.dataset.svc) { const s = SERVICES.find(x => x.id === t.dataset.svc);
+    openModal(`<p class="text-sm font-semibold text-bronzeD">${s.cat}</p><h2 class="font-head text-3xl font-black pr-10 mt-1">${s.title}</h2>
+    <p class="mt-5 font-medium">常見狀況：${s.pain}</p><p class="mt-3 text-inkS leading-relaxed">${s.desc}</p>
+    <ul class="mt-5 flex flex-wrap gap-2">${s.items.map(i => `<li class="bg-stone rounded-full px-3 py-1 text-sm">${i}</li>`).join('')}</ul>
+    <p class="mt-5 text-sm"><b>適合：</b>${s.fit}</p><button data-open="consult" class="press btn-flow mt-7 px-6 py-3 rounded-full font-semibold">諮詢這項服務</button>`); }
+  else if (t.dataset.art) { const a = ARTICLES[+t.dataset.art]; articleModal(a[0], a[1], a[2], '本篇整理企業最常遇到的實務狀況、相關法條與 HR 可以先做的三件事。完整內容於正式網站提供（demo 示意）。'); }
+  else if (t.dataset.news) { const n = NEWS[+t.dataset.news]; articleModal(n.date, n.t, n.cat, n.s); }
+  else if (t.dataset.job) openModal(`<h2 class="font-head text-3xl font-black pr-10">${t.dataset.job}</h2><p class="text-inkS mt-3">台北內湖｜全職｜職缺內容為 demo 示意。</p><ul class="mt-5 list-disc pl-5 space-y-1 text-inkS"><li>熟悉勞基法與人資實務者佳</li><li>願意與企業客戶第一線溝通</li></ul>
+    <a href="#careers" onclick="closeModal();setTimeout(()=>document.querySelector('[data-page=careers] form').scrollIntoView({behavior:'smooth'}),80)" class="press btn-flow mt-6 inline-flex px-6 py-3 rounded-full font-semibold">投遞履歷</a>`);
+  else if (t.dataset.dl) toast(`「${t.dataset.dl}」為示意文件，正式上線後可下載`);
+  else if (t.dataset.lightbox) openModal(`<img src="${t.dataset.lightbox}" alt="活動照片放大" class="w-full rounded-lg">`);
+  else if (t.dataset.cookie !== undefined) { $('#cookie').remove(); toast('已儲存您的偏好'); }
+});
+function articleModal(d, title, cat, body) {
+  const u = encodeURIComponent('https://valuestme.com/');
+  openModal(`<p class="text-sm text-bronzeD font-semibold">${cat}・<span class="tnum">${d}</span></p><h2 class="font-head text-2xl lg:text-3xl font-black pr-10 mt-1 leading-snug">${title}</h2>
+  <p class="mt-5 text-inkS leading-loose measure">${body}</p>
+  <div class="mt-8 pt-5 border-t border-stone flex flex-wrap items-center gap-2"><span class="text-sm text-inkS mr-2">分享</span>
+  <a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${u}" class="press btn-line border border-ink rounded-full px-4 py-1.5 text-sm">Facebook</a>
+  <a target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url=${u}" class="press btn-line border border-ink rounded-full px-4 py-1.5 text-sm">LINE</a>
+  <button onclick="toast('請使用 WeChat 掃描分享（示意）')" class="press btn-line border border-ink rounded-full px-4 py-1.5 text-sm">WeChat</button>
+  <a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=${u}" class="press btn-line border border-ink rounded-full px-4 py-1.5 text-sm">X</a></div>`);
+}
+$('#searchBtn').onclick = () => { location.hash = '#knowledge'; setTimeout(() => $('#kbInput').focus(), 120); };
+$('#toTop').onclick = () => window.__lenis ? window.__lenis.scrollTo(0) : scrollTo({ top: 0, behavior: 'smooth' });
+$('#yr').textContent = new Date().getFullYear();
+
+/* ---------- HEADER SHRINK ---------- */
+addEventListener('scroll', () => $('#hdr').classList.toggle('small', scrollY > 40), { passive: true });
+
+/* ---------- TYPING ---------- */
+(function () {
+  const words = ['勞資爭議調解', '大量解僱協助', '亞洲 EOR 名義雇主'], el = $('#typer'); if (!el) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let w = 0, i = words[0].length, del = true;
+  (function tick() {
+    const s = words[w]; i += del ? -1 : 1; el.textContent = s.slice(0, i);
+    let d = del ? 45 : 110;
+    if (!del && i === s.length) { del = true; d = 1800; }
+    else if (del && i === 0) { del = false; w = (w + 1) % words.length; d = 300; }
+    setTimeout(() => { if (!del || i) tick(); else { tick(); } }, d);
+  })();
+})();
+
+/* ---------- MOTION ---------- */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (window.gsap) gsap.registerPlugin(ScrollTrigger);
+if (window.Lenis && window.gsap && !reduce) { const lenis = new Lenis({ lerp: 0.1 }); lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0); window.__lenis = lenis; }
+let ctx;
+function initMotion(scope) {
+  ctx && ctx.revert(); if (reduce || !window.gsap) return;
+  ctx = gsap.context(() => {
+    if (scope.dataset.page === 'home') {
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      tl.fromTo('#heroCover', { scaleX: 1 }, { scaleX: 0, transformOrigin: 'right center', duration: 1, ease: 'power3.inOut' })
+        .from('.hl', { yPercent: 105, duration: 0.8, stagger: 0.08 }, 0.15)
+        .from('#heroPhoto img', { scale: 1.08, filter: 'blur(6px)', duration: 1.1 }, 0.2);
+      gsap.from('#hmSteps [data-step]', { y: 24, opacity: 0, stagger: 0.06, duration: 0.7, ease: 'power3.out', scrollTrigger: { trigger: '#hmSteps', start: 'top 85%' } });
+      $$('[data-count]', scope).forEach(el => { const n = +el.dataset.count, o = { v: 0 }; gsap.to(o, { v: n, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' }, onUpdate: () => el.textContent = Math.round(o.v) }); });
+    }
+    scope.querySelectorAll('[data-reveal]').forEach(el => gsap.from(el, { y: 32, opacity: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } }));
+    scope.querySelectorAll('[data-wipe]').forEach(el => gsap.fromTo(el, { clipPath: el.dataset.wipe === 'right' ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0%)', duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } }));
+  }, scope);
+  requestAnimationFrame(() => ScrollTrigger.refresh());
+}
+
+/* ---------- ROUTER ---------- */
+const PAGES = $$('[data-page]').map(s => s.dataset.page);
+const parentOf = k => { const it = NAV.find(n => n.sub && n.sub.some(s => s[0] === k)); return it ? groupOf(it) : null; };
+function route() {
+  let k = location.hash.slice(1) || 'home';
+  if (!PAGES.includes(k)) { const el = document.getElementById(k); if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; } k = 'home'; }
+  $$('[data-page]').forEach(s => s.classList.toggle('on', s.dataset.page === k));
+  $$('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === k));
+  $$('.dd-item[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === k));
+  $$('[data-group]').forEach(b => b.classList.toggle('active', b.dataset.group.split(' ').includes(k)));
+  if (k === 'services') renderSvc();
+  closeDd();
+  window.__lenis ? window.__lenis.scrollTo(0, { immediate: true }) : scrollTo(0, 0);
+  const page = $(`[data-page="${k}"]`);
+  icons();
+  requestAnimationFrame(() => initMotion(page));
+}
+addEventListener('hashchange', route);
+document.addEventListener('click', e => { const a = e.target.closest('a[data-scroll]'); if (a) { e.preventDefault(); const t = $(a.getAttribute('href')); t && (window.__lenis ? window.__lenis.scrollTo(t, { offset: -70 }) : t.scrollIntoView({ behavior: 'smooth' })); } });
+
+bindForms();
+icons();
+route();
+</script>
+<div style="position:fixed;left:12px;bottom:12px;z-index:2147483000;background:rgba(17,17,17,.82);color:#fff;font:12px/1.4 system-ui,sans-serif;padding:6px 11px;border-radius:999px;pointer-events:none">Demo 示意・Morcept Design</div></body>
+</html>
